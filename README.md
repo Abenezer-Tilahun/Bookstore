@@ -1,1 +1,50 @@
 # Bookstore
+An educational project for making a bookstore by implementing React and Redux.
+
+## Live Demo
+[Live Demo](https://abenezer-tilahun.github.io/Bookstore/)
+
+## Built With!
+- JavaScript.
+- React
+- Redux
+- GitFlow.
+- NPM.
+
+## Getting Started
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+clone repo:https://github.com/Abenezer-Tilahun/Bookstore.git
+A Web Browser (preferably Google Chrome)
+
+### Setup
+- Clone the GitHub Repository
+- Install npm package manager
+- npm start
+
+## 🤝 Contributing
+
+Feel free to check the [issues page](../../issues/).
+
+## Authors
+
+👤 **Author1**
+
+- GitHub: [@githubhandle](https://github.com/Abenezer-Tilahun)
+- Twitter: [@twitterhandle](https://twitter.com/AbenezerTilah11)
+- LinkedIn: [LinkedIn](linkedin.com/in/abenezer-tilahun-4b4b43137)
+
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+- My coding partners(@)
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
