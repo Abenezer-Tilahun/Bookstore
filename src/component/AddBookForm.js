@@ -1,19 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './AddBookForm.css';
 
-export default function AddBookForm({ categories }) {
+function AddBookForm() {
   return (
     <section id="form-section">
-      <h2>Add new book</h2>
+      <h2 className={AddBookForm.desc}>Add new book</h2>
       <form id="add-book-form">
-        <input type="text" name="title" required />
-        <select name="category">
-          {
-            categories.forEach((cat) => (
-              <option value="volvo">{cat.title}</option>
-            ))
-          }
+        <input type="text" name="title" placeholder="Book title" required />
+        <select>
+          <option value="">Category</option>
+          <option value="saab">Business</option>
+          <option value="opel">Leadership</option>
+          <option value="audi">History</option>
         </select>
         <button type="submit">Add book</button>
       </form>
@@ -21,6 +19,4 @@ export default function AddBookForm({ categories }) {
   );
 }
 
-AddBookForm.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-};
+export default AddBookForm;

@@ -1,23 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import BookList from '../component/BookList';
 import AddBookForm from '../component/AddBookForm';
 import './BooksPage.css';
 
-function BooksPage({ books }) {
+function BooksPage() {
   return (
     <div id="books-page-wrapper">
-      <BookList books={books} />
+      <BookList name="Zero to One" author="Peter Thiel" category="Business" />
+      <BookList name="Good To Great" author="Jim Collins" category="Leadership" />
       <hr />
-      <AddBookForm categories={[]} />
+      <AddBookForm />
     </div>
   );
 }
-
-BooksPage.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string.isRequired,
-  })).isRequired,
-};
 
 export default BooksPage;

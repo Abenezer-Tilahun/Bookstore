@@ -1,14 +1,9 @@
 import React from 'react';
+import categories from './Categories.css';
 
 function Categories() {
   return (
-    <div>
-      Categories Page
-      <br />
-      <button type="button">
-        Check status
-      </button>
-    </div>
+    <button type="button" className={categories.btn}>Check Status</button>
   );
 }
 
