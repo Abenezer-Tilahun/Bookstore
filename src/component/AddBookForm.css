@@ -1,0 +1,28 @@
+#add-book-form input,
+select {
+  margin-right: 20px;
+}
+
+#add-book-form input {
+  padding: 10px;
+  border: 1px solid rgb(206, 206, 206);
+  width: 40%;
+}
+
+#add-book-form select {
+  padding: 10px;
+  border: 1px solid rgb(212, 212, 212);
+  width: 30%;
+}
+
+#add-book-form button {
+  padding: 10px;
+  border: 0 solid #fff;
+  width: 13%;
+  background-color: #2274ee;
+  color: #fff;
+}
+
+.desc {
+  color: #9c9c9c;
+}
