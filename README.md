@@ -1,8 +1,8 @@
 # Bookstore
-An educational project for making a bookstore by implementing React and Redux.
+"BookStore" is a web app for adding and removing books from a library storage. It is a Single Page App (SPA) that allows users to add and remove a book.
 
-## Live Demo
-[Live Demo](https://abenezer-tilahun.github.io/Bookstore/)
+Our goal here is to Build a single page web application for book webs using the React library, Click [here](https://abenezer-tilahun.github.io/Bookstore/) to get a live preview of the project
+
 
 ## Built With!
 - JavaScript.
