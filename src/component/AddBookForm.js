@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import uuid from 'react-uuid';
 import { addBook } from '../redux/books/books';
 import './AddBookForm.css';
 
@@ -20,6 +21,7 @@ function AddBookForm() {
             return;
           }
           const book = {
+            id: uuid(),
             name: inputName.value,
             category: inputCategory.value,
             author: 'Abenezer',
