@@ -10,27 +10,26 @@ function AddBookForm() {
 
   const dispatch = useDispatch();
 
+  const submitBookToStore = (e) => {
+    e.preventDefault();
+    if (!inputName.value.trim() || !inputCategory.value.trim()) {
+      return;
+    }
+    const book = {
+      id: uuid(),
+      name: inputName.value,
+      category: inputCategory.value,
+      author: 'Abenezer',
+    };
+    dispatch(addBook(book));
+    inputName.value = '';
+    inputCategory.value = '';
+  };
+
   return (
     <section id="form-section">
       <h2 className={AddBookForm.desc}>Add new book</h2>
-      <form
-        id="add-book-form"
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (!inputName.value.trim() || !inputCategory.value.trim()) {
-            return;
-          }
-          const book = {
-            id: uuid(),
-            name: inputName.value,
-            category: inputCategory.value,
-            author: 'Abenezer',
-          };
-          dispatch(addBook(book));
-          inputName.value = '';
-          inputCategory.value = '';
-        }}
-      >
+      <form id="add-book-form" onSubmit={submitBookToStore}>
         <input type="text" placeholder="Book title" ref={(node) => { inputName = node; }} />
         <select ref={(node) => { inputCategory = node; }}>
           <option value=""> Select a Category</option>
