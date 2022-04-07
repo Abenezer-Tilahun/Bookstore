@@ -1,16 +1,17 @@
-export const CHECK_STATUS = 'bookstore/categories/CHECK_STATUS';
+const SET_STATUS = 'SET_STATUS';
 
-export const checkStatus = () => ({
-  type: CHECK_STATUS,
+export const setCategoryStatus = (status) => ({
+  type: SET_STATUS,
+  status,
 });
 
-function reducer(state = [], action) {
+const reducer = (state = 'Check Status', action) => {
   switch (action.type) {
-    case CHECK_STATUS:
-      return 'Under Construction';
+    case SET_STATUS:
+      return action.status;
     default:
       return state;
   }
-}
+};
 
 export default reducer;
