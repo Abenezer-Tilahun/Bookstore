@@ -4,14 +4,14 @@ class ServiceGateway {
     this.uniqueDbKey = 'xgFXbgiOg2eVI4gsgjOJ';
   }
 
-    add = async (_id, _name, _author, _category) => {
+    add = async (_id, _name, _category, _author) => {
       const data = await fetch(`${this.baseUrl}${this.uniqueDbKey}/books`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          item_id: _id, title: _name, author: _author, category: _category,
+          item_id: _id, title: _name, category: _category, author: _author,
         }),
       });
       return data;

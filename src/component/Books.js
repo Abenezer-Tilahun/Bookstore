@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { fetchAllBooks } from '../redux/books/books';
 import BookList from './BookList';
 
 const Books = ({ books }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAllBooks());
+  }, []);
+
   const booklist = books.map((book) => {
     const e = book.id;
     return (
