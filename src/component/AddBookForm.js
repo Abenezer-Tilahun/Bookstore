@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import uuid from 'react-uuid';
 import { addBook } from '../redux/books/books';
-import './AddBookForm.css';
+import form from './AddBookForm.module.css';
 
-function AddBookForm() {
+const AddBookForm = () => {
   let inputName;
   let inputCategory;
 
@@ -26,21 +26,54 @@ function AddBookForm() {
     inputCategory.value = '';
   };
 
+  const [localState, setState] = useState({
+    name: null,
+    category: null,
+    author: 'Abenezer',
+  });
+
   return (
-    <section id="form-section">
-      <h2 className={AddBookForm.desc}>Add new book</h2>
-      <form id="add-book-form" onSubmit={submitBookToStore}>
-        <input type="text" placeholder="Book title" ref={(node) => { inputName = node; }} />
-        <select ref={(node) => { inputCategory = node; }}>
+    <div className="ml-x">
+      <h4 className={`primary-font ${form.desc}`}>ADD NEW BOOK</h4>
+      <form
+        className={form.main}
+        onSubmit={submitBookToStore}
+      >
+        <input
+          type="text"
+          className="primary-font disabled-black"
+          placeholder="Book title"
+          ref={(node) => { inputName = node; }}
+          onChange={(e) => {
+            const State = {
+              ...localState,
+              name: e.target.value,
+            };
+            setState(State);
+          }}
+          maxLength="28"
+        />
+        <select
+          className="primary-font disabled-black"
+          ref={(node) => { inputCategory = node; }}
+          onChange={(e) => {
+            const State = {
+              ...localState,
+              category: e.target.value,
+            };
+            setState(State);
+          }}
+        >
           <option value=""> Select a Category</option>
           <option value="Business">Business</option>
           <option value="Leadership">Leadership</option>
           <option value="History">History</option>
+          <option value="Educational">Educational</option>
         </select>
-        <button type="submit">Add book</button>
+        <button type="submit" className="secondary-font">ADD BOOK</button>
       </form>
-    </section>
+    </div>
   );
-}
+};
 
 export default AddBookForm;

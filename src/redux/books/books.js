@@ -1,4 +1,4 @@
-import NetworkLayer from '../../service/database';
+import ServiceGateway from '../../service/database';
 
 const ADDSUCCESS = 'BookStore/Controller/ADDBOOK_SUCCESSFUL';
 const ADDFAILED = 'BookStore/Controller/ADDBOOK_FAILED';
@@ -7,9 +7,9 @@ const REMOVEFAILED = 'BookStore/Controller/REMOVEBOOK_FAILED';
 const FETCHSUCCESS = 'BookStore/Controller/FETCH_SUCCESSFUL';
 const FETCHFAILED = 'BookStore/Controller/FETCH_FAILED';
 
-const connection = new NetworkLayer();
+const connection = new ServiceGateway();
 
-export const addBook = ({ name, category, author }) => async (dispatch) => {
+export const addBook = ({ name, category, author }) => (dispatch) => {
   const id = Date.now();
   connection.add(id, name, category, author).then((response) => {
     if (response.status === 201 && response.ok) {
@@ -36,7 +36,7 @@ export const addBook = ({ name, category, author }) => async (dispatch) => {
   });
 };
 
-export const removeBook = (id) => async (dispatch) => {
+export const removeBook = (id) => (dispatch) => {
   connection.remove(id).then((response) => {
     if (response.status === 201 && response.ok) {
       dispatch(
@@ -56,7 +56,7 @@ export const removeBook = (id) => async (dispatch) => {
   });
 };
 
-export const fetchAllBooks = () => async (dispatch) => {
+export const fetchAllBooks = () => (dispatch) => {
   connection.fetch().then((response) => {
     if (response.status === 200 && response.ok) {
       response.json().then((data) => {
@@ -64,7 +64,7 @@ export const fetchAllBooks = () => async (dispatch) => {
         const bkData = [];
         keys.forEach((key) => {
           bkData.push({
-            id: key,
+            id: parseInt(key, 10),
             name: data[key][0].title,
             category: data[key][0].category,
             author: data[key][0].author,
@@ -88,7 +88,7 @@ export const fetchAllBooks = () => async (dispatch) => {
   });
 };
 
-const reducer = (state = [], action) => {
+const Reducer = (state = [], action) => {
   switch (action.type) {
     case ADDSUCCESS:
       return [
@@ -109,4 +109,4 @@ const reducer = (state = [], action) => {
   }
 };
 
-export default reducer;
+export default Reducer;
