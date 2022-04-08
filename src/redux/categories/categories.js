@@ -1,11 +1,11 @@
-const SET_STATUS = 'SET_STATUS';
+const SET_STATUS = 'BookStore/Controller/SET_STATUS';
 
 export const setCategoryStatus = (status) => ({
   type: SET_STATUS,
   status,
 });
 
-const reducer = (state = 'Check Status', action) => {
+const Reducer = (state = 'Check Status', action) => {
   switch (action.type) {
     case SET_STATUS:
       return action.status;
@@ -14,4 +14,4 @@ const reducer = (state = 'Check Status', action) => {
   }
 };
 
-export default reducer;
+export default Reducer;

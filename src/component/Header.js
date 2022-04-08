@@ -1,31 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css';
+import PersonIcon from '@mui/icons-material/Person';
+import nav from './Header.module.css';
 
 const Header = () => (
-  <header>
-    <div className="header-wrapper container">
-      <h1 className="branding">
-        Bookstore
-      </h1>
-      <nav>
-        <ul>
-          <li>
-            {' '}
-            <Link to="/"> Books </Link>
-          </li>
-          <li>
-            {' '}
-            <Link to="/categories"> Categories</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <div className="user">
-        <svg className="w-6 h-6" fill="currentColor" stroke="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-      </div>
+  <nav className={nav.main}>
+    <div className={`ml-6 ${nav.menu}`}>
+      <Link to="/" className="o-td"><h1 className="mr-4 cl-blue primary-font">Bookstore CMS</h1></Link>
+      <Link to="/" className="o-td"><p className="mr-4 mt-2p5 primary-font o-td cl-black">Books</p></Link>
+      <Link to="/categories" className="o-td"><p className="mt-2p5 primary-font o-td cl-black disabled-black">Categories</p></Link>
     </div>
-  </header>
+    <div className={nav.user}>
+      <PersonIcon color="primary" />
+    </div>
+  </nav>
 );
 
 export default Header;
