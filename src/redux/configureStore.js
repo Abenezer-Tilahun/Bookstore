@@ -1,10 +1,13 @@
-import { createStore, combineReducers } from 'redux';
-import booksReducer from './books/books';
-import categoriesReducer from './categories/categories';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import books from './books/books';
+import categories from './categories/categories';
 
 const rootReducer = combineReducers({
-  books: booksReducer,
-  categories: categoriesReducer,
+  books,
+  categories,
 });
 
-export default createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
+export default store;
