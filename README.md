@@ -5,19 +5,25 @@
 
 Our goal here is to Build a single page web application for book webs using the React library, Click [here](https://abenezer-tilahun.github.io/Bookstore/) to get a live preview of the project
 
+# Features implemented so far are:
 
-## Built With
+- Project Setup with React Installations
+- Redux to handle state management
+- Connected to an API endpoint to save and fetch books
+
+# Built With
 
 - React (A free and open-source front-end JavaScript library for building user interfaces based on UI components)
+- React Testing Library
+- React Router v6
+- Redux
+- React MUI font icons
 - Stylelint (A mighty, modern linter that helps you avoid errors and enforce conventions in your styles).
 - ESlint (A mighty, modern linter that helps you avoid errors and enforce conventions in JavaScript codes)
-- Redux
-- GitFlow.
-- NPM.
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+# Prerequisites
 
 The basic requirements for building the executable are:
 
